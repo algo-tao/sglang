@@ -1296,7 +1296,7 @@ async def v1_chat_completions(tokenizer_manager, raw_request: Request):
 
                     else:
                         choice_logprobs = None
-
+                    n_prev_tokens[index] = n_prev_token
                     finish_reason = content["meta_info"]["finish_reason"]
                     finish_reason_type = (
                         finish_reason["type"] if finish_reason else None
